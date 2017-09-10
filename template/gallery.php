@@ -6,7 +6,7 @@
                 box-sizing: border-box;
             }
             .container {
-                width: 1200px;
+                width: 1400px;
                 margin: 0 auto;
             }
             .row {

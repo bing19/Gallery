@@ -6,6 +6,7 @@ class Gallery
 {
     private $images = [];
     private $imgDir = APP_ROOT . DS . 'img';
+    private $imgType = ['image/jpeg','image/jpg','image/png'];
 
     function getAllImg() {
         $dh = opendir($this->imgDir);
@@ -26,9 +27,19 @@ class Gallery
 
     public function downloadImg($img) {
         $uploaded = $img['newimage'];
+        if ($uploaded['name'] == '') {
+            return false;
+        }
+        if($uploaded['size'] > 1000000) {
+            return false;
+        }
+        if(false == in_array($uploaded['type'], $this->imgType)) {
+            echo 'Вы загружаете не картинку';
+            return false;
+        }
         if($uploaded['error'] == 0) {
             move_uploaded_file($uploaded['tmp_name'], APP_ROOT . DS . 'img' . DS . $uploaded['name']);
-            $this->image_resize(APP_ROOT . DS . 'img' . DS . $uploaded['name'], APP_ROOT . DS . 'img/tumbs' . DS .  'tumb-' . $uploaded['name'], 200);
+            $this->image_resize(APP_ROOT . DS . 'img' . DS . $uploaded['name'], APP_ROOT . DS . 'img/tumbs' . DS .  'tumb-' . $uploaded['name'], false, 200);
         }
         header( "location: / ");
     }
@@ -36,7 +47,7 @@ class Gallery
     public function image_resize(
         $source_path,
         $destination_path,
-        $newwidth,
+        $newwidth=false,
         $newheight = FALSE,
         $quality = FALSE // качество для формата jpeg
     ) {
