@@ -11,14 +11,15 @@
             }
             .row {
                display: flex;
-                justify-content: space-between;
+                /*justify-content: space-between;*/
                 flex-wrap: wrap;
             }
             .img {
                 max-width: 32%;
-                flex-grow:1;
+                /*flex-grow:1;*/
                 border: 2px solid #949494;
                 margin-bottom: 15px;
+                margin-right: 10px;
 
             }
             .img img {
@@ -34,7 +35,7 @@
 
                 <div class="img">
                     <a href="image?file=<?php echo $num ?>">
-                        <img src="img/<?php echo $img->imgName; ?>">
+                        <img src="img/tumbs/<?php echo 'tumb-' . $img->imgName; ?>">
                     </a>
                 </div>
 
