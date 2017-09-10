@@ -1,8 +1,6 @@
 <?php
-include_once 'autoloader.php';
 
 $num = $_GET['file'];
-$images = include 'func.php';
 
 ?>
 
@@ -25,7 +23,7 @@ $images = include 'func.php';
 </head>
 <body>
 <div class="container">
-    <img src="img/<?php echo $images[$num] ?>">
+    <img src="../img/<?php echo $images[$num]->imgName; ?>">
 
 </div>
 

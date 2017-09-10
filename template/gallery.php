@@ -33,18 +33,15 @@
                 <?php foreach ($images as $num => $img) { ?>
 
                 <div class="img">
-                    <a href="/image.php?file=<?php echo $num ?>">
-                        <img src="img/<?php echo $img ?>">
+                    <a href="image?file=<?php echo $num ?>">
+                        <img src="img/<?php echo $img->imgName; ?>">
                     </a>
                 </div>
 
                 <?php } ?>
             </div>
 
-
-
-
-            <form action="postimage.php" method="post" enctype="multipart/form-data">
+            <form action="postimg" method="post" enctype="multipart/form-data">
                 <input type="file" name="newimage">
                 <input type="submit" value="Загрузить">
             </form>
