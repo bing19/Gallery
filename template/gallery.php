@@ -6,33 +6,35 @@
                 box-sizing: border-box;
             }
             .container {
-                width: 1400px;
+                width: 90%;
                 margin: 0 auto;
             }
             .row {
-               display: flex;
+               display: block;
                 /*justify-content: space-between;*/
                 flex-wrap: wrap;
+                flex-direction: column;
             }
             .grid-6 {
-                display: flex;
-                flex-basis: 700px;
+                display:flex;
+                margin-bottom: 20px;
                 flex-wrap: wrap;
-
             }
             .big-img {
-                width: 500px;
+                width:100%;
+                text-align: center;
             }
 
             .img {
-                max-width: 100%;
                 /*flex-grow:1;*/
                 border: 2px solid #949494;
                 margin-bottom: 15px;
                 margin-right: 10px;
+                width: 10%;
+                flex-basis: 110px;
 
             }
-            .img img {
+            img {
                 max-width: 100%;
             }
         </style>
@@ -40,7 +42,7 @@
     <body>
         <div class="container">
             <h1>Галлерея</h1>
-                <div class="row">
+
                     <div class="grid-6"><?php foreach ($images as $num => $img) { ?>
 
                             <div class="img">
@@ -54,7 +56,7 @@
                         <div class="big-img" id="big"></div>
                     </div>
 
-                </div>
+
 
             <form action="postimg" method="post" enctype="multipart/form-data">
                 <input type="file" name="newimage">
