@@ -30,7 +30,8 @@ class Gallery
         if ($uploaded['name'] == '') {
             return false;
         }
-        if($uploaded['size'] > 1000000) {
+        if($uploaded['size'] > 10000000) {
+            echo 'Слишком большой размер';
             return false;
         }
         if(false == in_array($uploaded['type'], $this->imgType)) {
