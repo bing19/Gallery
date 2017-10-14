@@ -47,7 +47,7 @@
 
                             <div class="img">
                                 <a href="image?file=<?php echo $num ?>">
-                                    <img src="img/tumbs/<?php echo 'tumb-' . $img->imgName; ?>">
+                                    <img src="img/tumbs/<?php echo 'tumb-' . $img->imgName; ?>" <?php if(($num - 1) == 0){echo 'id=' . 'firstImg';}?> >
                                 </a>
                             </div>
 

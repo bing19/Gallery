@@ -27,6 +27,12 @@ switch ($url) {
 
 
 
+//$string = file('file.txt');
+//$page = isset($_GET['page']) ? $_GET['page'] : 1;
+//$onpage = 5;
+//$start = ($page - 1) * $onpage;
+//$comments = array_slice($string, $start, $onpage);
+//var_dump($comments);
 
 ?>
 
